@@ -1,5 +1,0 @@
-<?php 
-	getheader();
-	getbody();
-	getfooter();
-?>
