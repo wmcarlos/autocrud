@@ -21,7 +21,11 @@
 		break;
 
 		case "logout":
-
-		break;s
+			unset($_SESSION["username"]);
+			unset($_SESSION["password"]);
+			unset($_SESSION["role_id"]);
+			session_destroy();
+			header("location: ?v=login");
+		break;
 	}
 ?>
