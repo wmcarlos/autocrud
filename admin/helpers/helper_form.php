@@ -11,7 +11,7 @@
 				include(views() . "view_404.php");
 			}
 		}else{
-			include(views() . "view_home.php");
+			include(views() . "view_login.php");
 		}
 	}
 ?>

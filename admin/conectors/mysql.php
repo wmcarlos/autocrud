@@ -4,9 +4,9 @@
 				$result;
 
 		private function connect(){
-			$this->con = mysql_connect($db["server"],$db["user"],$db["password"]) or die ("Error from Connect to Server" . mysql_error());
-
-			mysql_select_db($db["database"], $this->con) or die ("Error from Select to Database " . mysql_error());
+			include(config() . "db.php");
+			$this->con = mysql_connect($db['server'],$db['user'],$db['password']) or die ("Error from Connect to Server" . mysql_error());
+			mysql_select_db($db['database'], $this->con) or die ("Error from Select to Database " . mysql_error());
 		}
 
 		protected function execute($sql){
@@ -19,7 +19,7 @@
 			return mysql_fetch_array($this->result);
 		}
 
-		protected function transaction($t == "begin"){
+		protected function transaction($t = "begin"){
 			$t = strtoupper($t);
 			$sql = "";
 			switch ($t) {

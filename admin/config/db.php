@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$db = Array(
 		"server" => "localhost",
 		"user" => "root",

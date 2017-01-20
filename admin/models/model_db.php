@@ -1,5 +1,5 @@
 <?php 
-	require_once(config() . "db.php");
+	include(config() . "db.php");
 	switch($db["conector"]){
 		case "mysql":
 			include(conectors() . "mysql.php");

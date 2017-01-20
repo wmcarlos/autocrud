@@ -26,8 +26,7 @@ create table value(
 	optional_value5 text,
 	isactive char(1) not null default 'Y',
 	constraint pk_value_id primary key (value_id),
-	constraint fk_list_id foreign key (list_id) references list (list_id) on update cascade on delete restrict,
-	constraint fk_parent_value_id foreign key (parent_value_id) references value (value_id) on update cascade on delete restrict
+	constraint fk_list_id foreign key (list_id) references list (list_id) on update cascade on delete restrict
 )engine = InnoDB;
 
 create table window(
@@ -137,7 +136,7 @@ create table password(
 	created timestamp not null default current_timestamp,
 	updated timestamp null,
 	strpassword varchar(100) not null,
-	isative char(1) not null default 'Y',
+	isactive char(1) not null default 'Y',
 	constraint pk_password_id primary key (password_id),
 	constraint fk_user_id foreign key (user_id) references user (user_id) on update cascade on delete restrict
 )engine = InnoDB;
@@ -148,7 +147,7 @@ create table question(
 	created timestamp not null default current_timestamp,
 	updated timestamp null,
 	strquestion varchar(200) not null,
-	straswer varchar(200) not null,
+	stranswer varchar(200) not null,
 	isactive char(1) not null default 'Y',
 	constraint pk_question_id primary key (question_id),
 	constraint fk_user_id001 foreign key (user_id) references user (user_id) on update cascade on delete restrict
@@ -167,3 +166,25 @@ create table post(
 	constraint pk_post_id primary key (post_id),
 	constraint fk_user_id002 foreign key (user_id) references user (user_id) on update cascade on delete restrict
 )engine=InnoDB;
+
+#list
+insert into list(list_id,name) values (1,"ROLES");
+
+#value
+insert into value (value_id,list_id,default_value) values (1,1,"SYSTEM");
+insert into value (value_id,list_id,default_value) values (2,1,"ADMIN");
+
+#user
+insert into user (user_id, role_id, first_name,last_name,sex,birthday,email,phone,username)
+	values (1,1,"SYSTEM NAME","SYSTEM LAST NAME",'M',"1991-01-09","systememail@domain.com","+580000000000","SYSTEM");
+
+#password
+insert into password (password_id,user_id,strpassword)
+	values (1,1,MD5("4ut0crud"));
+
+#question
+insert into question(question_id,user_id,strquestion,stranswer)
+	values (1,1,"auto","crud");
+
+insert into question(question_id,user_id,strquestion,stranswer)
+	values (2,1,"crud","auto");
