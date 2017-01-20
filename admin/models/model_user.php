@@ -69,6 +69,9 @@
 				$arr[] = $row;
 			}
 
+			$this->free_result();
+			$this->close();
+			
 			return $arr;
 		}
 	}	
