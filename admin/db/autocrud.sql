@@ -97,7 +97,8 @@ create table item(
 	constraint pk_item_id primary key (item_id),
 	constraint fk_item_type_id foreign key (item_type_id) references value (value_id) on update cascade on delete restrict,
 	constraint fk_window_id001 foreign key (window_id) references window (window_id) on update cascade on delete restrict,
-	constraint fk_parent_item_id foreign key (parent_item_id) references item (item_id) on update cascade on delete restrict
+	constraint fk_parent_item_id foreign key (parent_item_id) references item (item_id) on update cascade on delete restrict,
+	constraint fk_menu_id foreign key (menu_id) references value (value_id) on update cascade on delete restrict
 )engine = InnoDB;
 
 create table user(
