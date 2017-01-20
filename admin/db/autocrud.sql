@@ -122,7 +122,7 @@ create table access(
 	updated timestamp null,
 	isative char(1) not null default 'Y',
 	constraint pk_access_id primary key (access_id),
-	constraint fk_item_id foreign key (item_id) references value (value_id) on update cascade on delete restrict,
+	constraint fk_item_id foreign key (item_id) references item(item_id) on update cascade on delete restrict,
 	constraint fk_role_id01 foreign key (role_id) references value (value_id) on update cascade on delete restrict
 )engine = InnoDB;
 
