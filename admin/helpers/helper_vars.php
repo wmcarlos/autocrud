@@ -2,31 +2,31 @@
 	global $url;
 	function models(){
 		global $url;
-		$url = BASE . "/models/";
+		$url = ADMPATH . "/models/";
 		return $url;
 	}
 
 	function controllers(){
 		global $url;
-		$url = BASE . "/controllers/";
+		$url = ADMPATH . "/controllers/";
 		return $url;
 	}
 
 	function views(){
 		global $url;
-		$url = BASE . "/views/";
+		$url = ADMPATH . "/views/";
 		return $url;
 	}
 
 	function helpers(){
 		global $url;
-		$url = BASE . "/helpers/";
+		$url = ADMPATH . "/helpers/";
 		return $url;
 	}
 
 	function config(){
 		global $url;
-		$url = BASE . "/config/";
+		$url = ADMPATH . "/config/";
 		return $url;
 	}
 
@@ -39,13 +39,13 @@
 
 	function conectors(){
 		global $url;
-		$url = BASE . "/conectors/";
+		$url = ADMPATH . "/conectors/";
 		return $url;
 	}
 
 	function db(){
 		global $url;
-		$url = BASE . "/db/";
+		$url = ADMPATH . "/db/";
 		return $url;
 	}
 ?>
